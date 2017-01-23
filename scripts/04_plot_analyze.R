@@ -2,12 +2,6 @@
 
 Toward More Precise Numerical Statements
 
-authors:
-  Gaurav Sood, gsood07@gmail.com
-  Andy Guess, a.guess@columbia.edu
-
-date: June 2015
-
 "
 
 # Set Directory
@@ -16,10 +10,10 @@ setwd("quant-discipline/")
 
 # Read in data
 # Read in APSR data
-apsr <- read.csv("data/apsr.csv")
+apsr <- read.csv("data/apsr_small.csv")
 
 # Read in AER
-aer_all <- read.csv("data/aer.csv")
+aer_all <- read.csv("data/aer_small.csv")
 
 # Only AER (without papers and proceedings)
 aer <- aer_all[aer_all$pnp==0,]
@@ -47,6 +41,7 @@ aerp_precise <- sum(aerp$numberOrnot[aerp$type=="empirical"])/nemperical_aerp
 # Plot the proportions
 library(ggplot2)
 library(grid)
+library(goji) #devtools::install_github("soodoku/goji")
 
 res <- data.frame(means=c(aer_precise, aerp_precise, apsr_precise), labels=c("AER", "AER P & P", "APSR"))
 res$labels <- factor(res$labels, levels=c("AER", "AER P & P", "APSR"))
@@ -67,7 +62,6 @@ ggplot(data=res, aes(y=res$means, x=res$labels)) +
         axis.title   = element_text(size=10),
         axis.text    = element_text(size=8),
         axis.ticks.y = element_blank(),
-        axis.line.x  = element_line(colour = 'red', size = 3, linetype = 'dashed'),
         axis.title.x = element_text(vjust=-1),
         axis.title.y = element_text(vjust= 1),
         plot.margin = unit(c(0,.5,.5,.5), "cm"))
