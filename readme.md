@@ -1,5 +1,5 @@
-Quantifying Precise Quantitative Statements in Abstracts
-=========================================================
+Toward Precise Numerical Summaries
+===================================
 
 Just about 10% of empirical articles in recent volumes of APSR (see below) have abstracts with precise quantitative statements. But nearly 35% of the empirical papers in the AER do the same. We discuss reasons behind why so few articles contain precise numerical statements in their abstracts and some potential implications. 
 
@@ -23,5 +23,3 @@ Gaurav Sood and Andy Guess
 License
 ------------
 Released under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
-
-
